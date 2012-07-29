@@ -48,6 +48,11 @@ io.sockets.on('connection', function (socket) {
     game.handleTyping();
   });
 
+  socket.on("stoppedtyping", function() {
+    console.log("     Received stopped typing for " + nickname);
+    game.sendStopTyping();
+  });
+
   socket.on("nickname", function(data) {
     console.log("     Received nickname: " + data.nickname);
 
