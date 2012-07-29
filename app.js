@@ -40,7 +40,7 @@ io.sockets.on('connection', function (socket) {
   });
 
   socket.on("log", function() {
-    game.sendMessageLog()
+    game.sendMessageLog();
   });
 
   socket.on("typing", function() {
