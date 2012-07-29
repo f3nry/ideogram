@@ -1,0 +1,9 @@
+
+.pull-right {
+  float: right;
+}
+
+table#message-table {
+  float: left;
+  width: 600px;
+}

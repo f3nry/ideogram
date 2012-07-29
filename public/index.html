@@ -1,0 +1,54 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>Ideogram</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="http://underscorejs.org/underscore-min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/javascripts/client.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/app.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="brand" href="#">
+              Ideogram
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <h2>Ideogram.it!</h2>
+
+      <input type="text" name="message" id="message"/>
+
+      <div class="container">
+        <table class="table" id="message-table">
+          <thead>
+          <tr>
+            <th>Nickname</th>
+            <th>Message</th>
+          </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+
+        <div class="pull-right">
+          <label>Nickname:</label>
+          <input type="text" name="nickname" id="nickname" />
+
+          <div id="people">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

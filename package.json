@@ -1,0 +1,23 @@
+{
+  "author": "",
+  "name": "ideogram",
+  "version": "0.0.1-10",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/SwiftSharing/ideogram.git"
+  },
+  "engines": {
+    "node": "~0.6.19"
+  },
+  "dependencies": {
+    "express": ">= 0.0.1",
+    "socket.io": ">= 0.0.1",
+    "underscore": ">= 0.0.1",
+    "coffee-script": ">= 0.0.1"
+  },
+  "devDependencies": {},
+  "subdomain": "ideogram",
+  "scripts": {
+    "start": "app.js"
+  }
+}
