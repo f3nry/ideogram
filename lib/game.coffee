@@ -8,6 +8,7 @@ client.open (error, client) ->
 
 nicknames = {}
 messages = []
+typing = {}
 
 class exports.Game
 
@@ -23,7 +24,21 @@ class exports.Game
         @io.sockets.emit("stoppedtyping", @nickname)
         @io.sockets.emit("received", _.extend(data, { id: object._id.toString() } ))
 
-  handleTyping: ->
+  sendStopTyping: ->
+    stopped_username = _.first(_.keys(typing))
+    @socket.emit("stoppedtyping", stopped_username)
+    if typing[stopped_username]
+      clearTimeout(typing[stopped_username])
+      typing = {}
+
+  handleTyping: (typing_username) ->
+    obj = @
+
+    if typing[typing_username]
+      clearTimeout(typing[typing_username]);
+
+    typing[typing_username] = setTimeout((-> obj.sendStopTyping() ), 5000);
+
     @io.sockets.emit("istyping", @nickname)
 
   handleNicknameUpdate: (data) ->

@@ -1,4 +1,4 @@
-var socket = io.connect('http://' + document.domain + ":443/");
+var socket = io.connect('http://' + document.domain + ":3000/");
 
 $(document).ready(function() {
 
@@ -58,13 +58,6 @@ $(document).ready(function() {
     console.log(nickname + " is typing");
 
     reset_typing(nickname);
-
-    if(typing[nickname]) {
-      clearTimeout(typing[nickname]);
-    }
-
-    typing[nickname] = setTimeout(function() { reset_typing(); typing = {}; }, 5000);
-    console.log(typing);
   });
 
   socket.on("log", function(messages) {
@@ -74,12 +67,8 @@ $(document).ready(function() {
   });
 
   socket.on("stoppedtyping", function(nickname) {
+    console.log(nickname + " stopped typing");
     reset_typing();
-
-    if(typing[nickname]) {
-      clearTimeout(typing[nickname]);
-      typing = {};
-    }
   });
 
   socket.on("received", function(data) {
