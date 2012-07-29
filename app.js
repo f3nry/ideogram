@@ -5,7 +5,7 @@ var express = require('express')
   , _ = require('underscore')
   , engine = require('./lib/game');
 
-port = process.env.NODE_ENV == "production" ? 8080 : 3000;
+port = process.env.NODE_ENV == "production" ? 443 : 3000;
 
 app = express.createServer();
 
