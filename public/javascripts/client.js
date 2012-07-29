@@ -1,4 +1,4 @@
-var socket = io.connect('http://' + document.domain + ":8080/");
+var socket = io.connect('http://' + document.domain + ":443/");
 
 $(document).ready(function() {
 
