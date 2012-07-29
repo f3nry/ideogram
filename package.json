@@ -18,6 +18,6 @@
   "devDependencies": {},
   "subdomain": "ideogram",
   "scripts": {
-    "start": "app.js"
+    "start": "node app.js"
   }
 }
