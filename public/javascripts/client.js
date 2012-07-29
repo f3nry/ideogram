@@ -1,4 +1,4 @@
-var socket = io.connect('http://' + document.domain + ":3000/");
+var socket = io.connect('http://' + document.domain + ":443/");
 
 $(document).ready(function() {
 
