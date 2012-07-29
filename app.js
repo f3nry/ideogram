@@ -13,13 +13,13 @@ app.configure(function() {
   app.use(express.static(__dirname + '/public'));
 });
 
-io.set('heartbeat interval', 30);
-
 io = sio.listen(
   app.listen(port, function () {
     console.log('   app listening on http://localhost:' + port);
   })
 );
+
+io.set('heartbeat interval', 30);
 
 app.get('/', function (req, res) {
   res.sendfile(__dirname + '/public/index.html');
