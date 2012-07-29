@@ -26,8 +26,8 @@ class exports.Game
 
   sendStopTyping: ->
     stopped_username = _.first(_.keys(typing))
-    @socket.emit("stoppedtyping", stopped_username)
     if typing[stopped_username]
+      @io.sockets.emit("stoppedtyping", stopped_username)
       clearTimeout(typing[stopped_username])
       typing = {}
 
