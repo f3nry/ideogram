@@ -7,3 +7,7 @@ table#message-table {
   float: left;
   width: 600px;
 }
+
+input[type=text] {
+  padding: 14px 4px;
+}
